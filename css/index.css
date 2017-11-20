@@ -1,0 +1,652 @@
+html,body {
+  background-color: #f7f7f7;
+}
+.jdm {
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* 在移动端会有一些元素出现手指触摸之后出现背景颜色 去除掉 */
+/* 在ios系统中 所有input都会自带一个内阴影  你通过很多方法都去除不掉 */
+/* -webkit-appearance: none; 可以去除掉内阴影 */
+/*   */
+* {
+  -webkit-tap-highlight-color: transparent;
+  
+}
+
+/* 顶部搜索 */
+.jdm-search {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 40px;
+  background-color: #c91523;
+  z-index: 10;
+}
+
+.jdm-search .search-box {
+  width: 100%;
+  height: 100%;
+  padding-left: 75px;
+  padding-right: 50px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.jdm-search .logo {
+  display: block;
+  position: absolute;
+  /* calc方法是用来计算属性的值的*/
+  /* 运算符两边一定要有空格 */
+  top: calc((40px - 21px) / 2 );
+  left: calc((75px - 56px) / 2 );
+  width: 56px;
+  height: 21px;
+  background-position: 0 -109px;
+
+  background-image: url("../images/jd-sprites.png");
+  background-size: 200px 200px;
+}
+
+.jdm-search .search-box i {
+  position: absolute;
+  top: 10px;
+  left: 80px;
+  width: 20px;
+  height: 20px;
+  background-position: -60px -109px;
+  
+  background-image: url("../images/jd-sprites.png");
+  background-size: 200px 200px;
+}
+
+.jdm-search .search-box input {
+  width: 100%;
+  height: 30px;
+  border: 1px solid #ccc;
+  padding: 0 25px;
+  margin-top: 5px;
+  border-radius: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+  line-height: 30px;
+
+  /* border:none;
+  background-color: transparent; */
+}
+
+.jdm-search .login {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  font-size: 16px;
+  color: #fff;
+}
+
+/* 内容区域 */
+
+/* 1.轮播图 */
+.carousel {
+  width: 100%;
+}
+
+.carousel img {
+  width: 100%;
+  vertical-align: middle;
+}
+
+/* 2.导航 */
+.nav {
+  width: 100%;
+  padding-top: 10px;
+  background-color: #fff;
+}
+
+.nav ul {
+  width: 100%;
+  overflow: hidden;
+}
+
+.nav li {
+  width: 25%;
+  float: left;
+}
+
+.nav a {
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+.nav img {
+  width: 40px;
+  height: 40px;
+  padding-bottom: 5px;
+}
+
+.nav strong {
+  display: block;
+  text-align: center;
+  font-weight: normal;
+}
+
+/* 秒杀 */
+.seckill {
+  width: 100%;
+  padding: 0 10px;
+  margin-top: 5px;
+  box-sizing: border-box;
+  background-color: #fff;
+}
+
+.seckill .seckill-title {
+  width: 100%;
+  height: 40px;
+  overflow: hidden;
+}
+
+.seckill .seckill-title h2 {
+  position: relative;
+  float: left;
+  padding-left: 24px;
+  line-height: 40px;
+  font-size: 16px;
+  color: #c91523;
+  font-weight: normal;
+}
+/* 
+::before ::after 这俩伪元素没有兼容性
+因为ie浏览器实现的是单冒号 而在css3中把这两个东西归类到了伪元素 
+
+*/
+.seckill .seckill-title h2:before {
+  content: '';
+  position: absolute;
+  top: 6px;
+  left: 0;
+  width: 20px;
+  height: 26px;
+  background-position: -84px -107px;
+  
+  background-image: url("../images/jd-sprites.png");
+  background-size: 200px 200px;
+}
+
+
+.seckill .seckill-title .seckill-time {
+  float: left;
+  margin-left: 10px;
+  margin-top: 13px;
+}
+
+.seckill .seckill-title .seckill-time span {
+  display: block;
+  float: left;
+  background-color: #000;
+  padding-top: 2px;
+  color: #fff;
+}
+
+/* 
+ 1.具体的数字
+ 2.特殊的字符串  odd(奇数) even(偶数)
+ 3.数学表达式    -n+2 代表选中前两个但是不能写成2-n
+*/
+/* .seckill .seckill-title .seckill-time span:nth-child(3n) {
+
+} */
+/* 
+ 元素是从1开始  但是下面的选择器中的n是从0开始的到正无穷
+*/
+.seckill .seckill-title .seckill-time span:nth-child(3n) {
+  background-color: #fff;
+  color: #000;
+  margin: 0 2px;
+}
+/* 高中的数列 */
+.seckill .seckill-title .seckill-time span:nth-child(3n+1) {
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+  padding-left: 2px;
+}
+
+.seckill .seckill-title .seckill-time span:nth-child(3n+2) {
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+  padding-right: 2px;
+}
+
+
+
+.seckill .seckill-title .seckill-more {
+  float: right;
+  line-height: 40px;
+}
+
+.seckill-content {
+  width: 100%;
+  padding: 10px 0;
+}
+
+.seckill-content ul {
+  width: 100%;
+  overflow: hidden;
+}
+
+.seckill-content li {
+  float: left;
+  width: 33.33333%;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+
+.seckill-content a {
+  display: block;
+  width: 100%;
+  position: relative;
+}
+
+.seckill-content b {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  /* padding: 4px 5px; */
+  width: 34px;
+  height: 20px;
+  font-size: 12px;
+  text-align: center;
+  line-height: 20px;
+  background-color: orange;
+  border-radius: 50%;
+  color: #fff;
+  font-weight: normal;
+
+}
+
+.seckill-content img {
+  width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+
+.seckill-content .price {
+  text-align: center;
+}
+
+.seckill-content .price span {
+  display: block;
+}
+
+.seckill-content .price span.new {
+  color:#c91523;
+  margin-top: 10px;
+}
+
+.seckill-content .price span.old {
+  margin-top: 5px;
+  text-decoration: line-through;
+  color:#666;
+}
+
+
+
+/* 会场 */
+.meeting {
+  position: relative;
+  width: 100%;
+  /* padding-bottom: 400px; */
+}
+
+.meeting img {
+  width: 100%;
+  vertical-align: middle;
+}
+
+.meeting ul {
+  position: absolute;
+  left: 0;
+  bottom: 8px;
+  width:100%;
+  padding: 0 8px;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.meeting li {
+  float: left;
+  width: 50%;
+}
+
+.meeting a {
+  display: block;
+  width: 100%;
+}
+
+/* 热卖 */
+.hotsale {
+  width: 100%;
+}
+
+.hotsale ul {
+  width: 100%;
+  
+}
+
+.hotsale li {
+  width: 100%;
+  overflow: hidden;
+}
+
+
+.hotsale li:first-child a {
+  display: block;
+  float: left;
+  width: 33.33333%;
+}
+
+.hotsale li:last-child a {
+  display: block;
+  float: left;
+  width: 50%;
+}
+
+.hotsale  img {
+  width: 100%;
+  vertical-align: middle;
+}
+
+/* 超市 */
+.market {
+  width: 100%;
+  background-color: #fff;
+}
+
+.market h4,.theme h4,.brand h4 {
+  width: 100%;
+  height: 30px;
+  line-height: 30px;
+  color: #c91523;
+  font-weight: normal;
+  /* 在工作中 一般情况下 不允许给font-size 给奇数
+     如果给奇数 会出现同一个标签中的字不一样大
+  */
+  font-size: 15px;
+  padding-left: 10px;
+  box-sizing: border-box;
+}
+
+.market ul {
+  width: 100%;
+}
+
+.market li {
+  width: 100%;
+}
+
+.market a {
+  display:  block;
+}
+
+.market img {
+  width: 100%;
+  vertical-align: middle;
+}
+
+.market li a {
+  float: left;
+  width: 50%;
+}
+
+/* 广告 */
+.advert {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.advert img {
+  width: 100%;
+  vertical-align: middle;
+}
+
+/* 主题街 */
+.theme {
+  width: 100%;
+}
+
+.theme ul {
+  width: 100%;
+  overflow: hidden;
+}
+
+.theme li {
+  width: 100%;
+  overflow: hidden;
+}
+
+.theme a {
+  display: block;
+}
+
+.theme img {
+  width: 100%;
+  vertical-align: middle;
+}
+
+.theme li:nth-child(-n+3) {
+  float: left;
+  width: 50%;
+
+}
+
+.theme li:nth-child(3) a {
+  width: 50%;
+  float: left;
+}
+
+
+.theme li:last-child a {
+  float: left;
+  width: 25%;
+}
+
+/* 品牌推荐 */
+.brand {
+  width: 100%;
+  background-color: #fff;
+}
+
+.brand ul {
+  width: 100%;
+}
+
+.brand li {
+  width: 100%;
+  overflow: hidden;
+}
+
+.brand a {
+  width: 30%;
+  float: left;
+  display: block;
+}
+
+.brand img {
+  width: 100%;
+  vertical-align: middle;
+}
+
+.brand a:first-child {
+  width: 40%;
+}
+
+/* 猜你喜欢 */
+.guess {
+  width: 100%;
+  padding-bottom: 500px;
+  background-color: #fff;
+}
+
+.guess .guess-title {
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  padding: 0 10px;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.guess .guess-title h4 {
+  float: left;
+  font-size: 16px;
+  font-weight: normal;
+}
+
+.guess .guess-title .guess-login {
+  position: relative;
+  float: right;
+  padding: 0 20px;
+  font-size: 14px;
+  color: #c91523;
+}
+
+.guess .guess-title .guess-login:before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: 0;
+  width: 18px;
+  height: 18px;
+
+  background-image: url("../images/icon-login.png");
+  background-size: 18px 18px;
+  background-position: center center;
+}
+
+
+.guess .guess-title .guess-login:after {
+  content: '';
+  position: absolute;
+  top: 14px;
+  right: 5px;
+  width: 12px;
+  height: 12px;
+
+  background-image: url(../images/icon-right.png);
+  background-size: 4px 7px;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.guess .guess-content {
+  width: 100%;
+  overflow: hidden;
+}
+
+ .item {
+  float: left;
+  width: 50%;
+  padding: 10px;
+  box-sizing: border-box;
+  background-color: #fff;
+}
+
+ .item .item-top {
+   width: 100%;
+   display: block;
+ }
+
+ .item .item-top img {
+  width: 100%;
+  vertical-align: middle;
+ }
+
+ .item .item-top p {
+   margin: 10px 0;
+   width: 100%;
+
+   overflow: hidden;
+   display: -webkit-box;
+   -webkit-box-orient:  vertical;
+   -webkit-line-clamp: 2;
+
+   color: #333;
+   line-height: 1.2;
+   font-size: 14px;
+ }
+
+ .item .item-bottom {
+   width: 100%;
+   border-top: 1px solid #ccc;
+   padding: 10px 0;
+   overflow: hidden;
+   box-sizing: border-box;
+ }
+
+ .item .item-bottom span {
+   float: left;
+   color: #c91523;
+   font-size: 14px;
+ }
+
+ .item .item-bottom a {
+   display: block;
+   float: right;
+   border: 1px solid #ccc;
+   font-size: 13px;
+   width: 44px;
+   height: 16px;
+   text-align: center;
+   line-height: 17px;
+   border-radius: 3px;
+   color: #ccc;
+ }
+
+
+
+
+/* 底部工具栏 */
+.jdm-toolbar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 44px;
+  border-top: 1px solid #f7f7f7;
+  background-color: #fff;
+  box-sizing: border-box;
+  z-index: 10;
+}
+
+.jdm-toolbar ul {
+  width: 100%;
+  /* ul一定要给height: 100% 
+    因为之前我写的时候出现了bug
+  */
+  height: 100%;
+  display: flex;
+}
+
+.jdm-toolbar li {
+  flex: 1;
+  height: 100%;
+}
+
+.jdm-toolbar a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
+.jdm-toolbar img {
+  width: auto;
+  height: 44px;
+}

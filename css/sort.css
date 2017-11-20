@@ -1,0 +1,190 @@
+.jdm-sort {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.jdm-search {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 45px;
+  border-bottom: 1px solid #ccc;
+  background-image: url("../images/header-bg.png");
+  background-size: 1px  44px;
+  background-repeat: repeat-x;
+}
+
+
+.jdm-search .back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 40px;
+  height: 44px;
+  padding:  10px 11px;
+  box-sizing: border-box;
+  background-image: url("../images/jd-sprites.png");
+  background-size: 200px 200px;
+  background-position: -10px 12px;
+  background-clip: content-box;
+}
+
+.jdm-search .search-box {
+  width: 100%;
+  height: 100%;
+  padding: 0 50px;
+  box-sizing: border-box;
+}
+
+.jdm-search .search-box input {
+  width: 100%;
+  height: 30px;
+  border: 1px solid #ccc;
+  margin-top: 7px;
+  border-radius: 5px;
+  padding: 0 5px;
+  box-sizing: border-box;
+}
+
+
+.jdm-search .menu {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: block;
+  width: 44px;
+  height: 44px;
+  padding:  10px 11px;
+  box-sizing: border-box;
+  background-image: url("../images/jd-sprites.png");
+  background-size: 200px 200px;
+  background-position: -50px 12px;
+  background-clip: content-box;
+}
+
+
+/* 主要区域 */
+main {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  padding-top: 45px;
+  box-sizing: border-box;
+}
+
+/* flex:1 设置的是父元素中剩余空间的比例 */
+
+.jdm-menu {
+  width: 90px;
+  height: 100%;
+  overflow: hidden;
+}
+
+.jdm-menu ul {
+  width: 100%;
+  /* height: 100%; */
+}
+
+.jdm-menu li {
+  width: 100%;
+  height: 50px;
+  border-right: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  box-sizing: border-box;
+  font-size: 14px;
+  line-height: 50px;
+  text-align: center;
+  background-color: #f3f4f6;
+}
+
+.jdm-menu li.active {
+  border-right: none;
+  background-color: #fff;
+  color: #c95213;
+}
+
+.jdm-content {
+  flex:1;
+  height: 100%;
+  background-color:#fff;
+  padding-left: 15px;
+  padding-right: 10px;
+  padding-bottom: 30px;
+  overflow-y: auto;
+}
+
+.jdm-content .hot-rec h4 {
+  font-size: 12px;
+  color: #666;
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+
+.jdm-content .hot-rec ul {
+  width: 100%;
+  border-top: 1px solid #ccc;
+  border-left: 1px solid #ccc;
+  overflow: hidden;
+}
+
+.jdm-content .hot-rec li {
+  float: left;
+  width: 33.33333%;
+  height: 50px;
+  border-right: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  line-height: 50px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.jdm-content .hot-guider {
+  width: 100%;
+}
+
+.jdm-content .hot-guider h4 {
+  font-size: 12px;
+  color: #666;
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+
+.jdm-content .hot-guider ul {
+  width: 100%;
+  overflow: hidden;
+  font-size: 0;
+}
+
+.jdm-content .hot-guider li {
+  /* 在工作中 尤其是移动端 尽量少的用float
+    float非常耗电
+  */
+  display: inline-block;
+  /* 如果用了inline-block这种方式 ，发现
+  元素不对齐了，那么旧使用vertical-align
+  */
+  vertical-align: middle;
+  width: 33.33333%;
+}
+
+.jdm-content .hot-guider a {
+  display: block;
+  width: 100%;
+}
+
+.jdm-content .hot-guider li span {
+  display: block;
+  text-align: center;
+  font-size: 12px;
+}
+
+.jdm-content .hot-guider img {
+  width: 100%;
+  vertical-align: middle;
+}
+
